@@ -1,28 +1,15 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { BrowserRouter, Routes, Route} from "react-router-dom";
-
-
-const Home = ()=>{
-  return(
-    <div>Home</div>
-  )
-}
-
-const Main = ()=> {
-  return( 
-    <div>Main</div>
-  )
-}
+import { Home } from './home';
+import { Loing } from './login';
 
 function App() {
-
-
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/main" element={<Main/>}/>
+          <Route path={'/'} element={<Loing />} />
+          <Route path={'/home'} element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>
