@@ -12,7 +12,8 @@ export const Loing = () => {
   const handleSubmit = async () => {
     // REST API는 http요청의 규약을 지킨 서버요청을 말한다.
     // RESTfull API 요청이라는게 있는데 조금더 엄격하게 http요청을 지키는 API요청을 말해.
-    await axios.post(`http://localhost:5000/login`, userInfo);
+    const result = await axios.post(`http://localhost:5000/api/login`, userInfo);
+    console.log(result.data);
   };
 
   const handleChangeInput = (e) => {
@@ -21,9 +22,9 @@ export const Loing = () => {
     console.log(userInfo);
   };
 
-  const handleClick = ()=>{
-    axios.get("http://localhost:5000/click");
-  }
+  const handleClick = async () => {
+    await axios.get('http://localhost:5000/api/text');
+  };
 
   return (
     <>
